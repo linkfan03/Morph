@@ -28,16 +28,17 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		frame.setTitle("Morph");
 		try {
 			base = getDocumentBase();
+			System.out.println(getDocumentBase());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
 		// Image Setups
-		character = getImage(base, "/home/greg/Desktop/Morph_project/KiloboltGame/src/data/character.png");
-		characterDown = getImage(base, "/home/greg/Desktop/Morph_project/KiloboltGame/src/data/down.png");
-		characterJumped = getImage(base, "/home/greg/Desktop/Morph_project/KiloboltGame/src/data/jump.png");
+		character = getImage(base, "data/character.png");
+		characterDown = getImage(base, "data/down.png");
+		characterJumped = getImage(base, "data/jump.png");
 		currentSprite = character;
-		background = getImage(base, "/home/greg/Desktop/Morph_project/KiloboltGame/src/data/background.png");
+		background = getImage(base, "data/background.png");
 	}
 
 	@Override
