@@ -1,4 +1,4 @@
-package kiloboltgame;
+package morphgame;
 
 public class Background{
 private int bgX,bgY,speedX=0;
