@@ -16,10 +16,10 @@ import java.util.ArrayList;
 
 public class StartingClass extends Applet implements Runnable, KeyListener {
 	enum GameState {
-		Running, Dead
+		Running, Dead, MainMenu
 	}
 
-	GameState state = GameState.Running;
+	private static GameState state = GameState.MainMenu;
 
 	private static MainCharacter mainCharacter;
 	public static int score = 0;
@@ -33,14 +33,18 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 			tilegrassRight, tiledirt;
 
 	private ArrayList<Tile> tilearray = new ArrayList<Tile>();
-
+	private static Menu menu = new Menu();
+	
+	//This initializes the window that the game will be played in
+	//It also initializes the images used for characters and backgrounds
 	@Override
 	public void init() {
 
-		setSize(800, 480);
+		setSize(getWindowWidth(), getWindowHeight());
 		setFocusable(true);
 		setBackground(Color.BLACK);
 		addKeyListener(this);
+		addMouseListener(new MouseInput());
 		Frame frame = (Frame) this.getParent().getParent();
 		frame.setTitle("Morph");
 		try {
@@ -65,7 +69,8 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		tilegrassLeft = getImage(base, "data/tilegrassleft.png");
 		tilegrassRight = getImage(base, "data/tilegrassright.png");
 	}
-
+	//This method initializes the backgrounds and the main character
+	//Then it starts the game loop
 	@Override
 	public void start() {
 		bg1 = new Background(0, 0);
@@ -119,22 +124,26 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		}
 
 	}
-
+	
+	//This isn't used yet
 	@Override
 	public void stop() {
 		// TODO Auto-generated method stub
 	}
-
+	
+	//This isn't used yet
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
 	}
 
+	//This is the main game loop
+	//Controls when updates are made to the character's sprite
+	//and location of the character to the background	
 	@Override
 	public void run() {
-		if (state == GameState.Running) {
-
-			while (true) {
+		while (true) {
+			if (state == GameState.Running) {
 				mainCharacter.update();
 				if (mainCharacter.isMovingLeft()) {
 					currentSprite = characterBack;
@@ -150,19 +159,23 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 				bg1.update();
 				bg2.update();
 				repaint();
-				try {
-					Thread.sleep(17);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				
 				if (mainCharacter.getCenterY() > 500) {
 					state = GameState.Dead;
 				}
 			}
+			try {
+				Thread.sleep(17);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
-
 	}
 
+	
+	
+	//This acts another graphics buffer 
+	//Without this graphics will be choppy	
 	@Override
 	public void update(Graphics g) {
 		if (image == null) {
@@ -179,8 +192,10 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 
 	}
 
+	//Outputs graphics to the screen	
 	@Override
 	public void paint(Graphics g) {
+		g.setFont(font);
 		if (state == GameState.Running) {
 
 			g.drawImage(background, bg1.getBgX(), bg1.getBgY(), this);
@@ -194,12 +209,8 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 			g.setColor(Color.WHITE);
 			g.drawString(Integer.toString(score), 740, 30);
 
-		} else if (state == GameState.Dead) {
-			g.setColor(Color.BLACK);
-			g.fillRect(0, 0, 800, 480);
-			g.setColor(Color.WHITE);
-			g.drawString("Dead", 360, 240);
-
+		} else {
+			menu.update(g, state);
 		}
 	}
 
@@ -219,6 +230,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		}
 	}
 
+	//When the key is released we need to have the character return to the natural starting position	
 	public void keyPressed(KeyEvent e) {
 
 		switch (e.getKeyCode()) {
@@ -249,6 +261,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 
 	}
 
+	//When the key is released we need to have the character return to the natural starting position	
 	@Override
 	public void keyReleased(KeyEvent e) {
 		switch (e.getKeyCode()) {
@@ -273,15 +286,18 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 
 	}
 
+    //not used yet	
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 	}
 
+	//Gets background 1
 	public static Background getBg1() {
 		return bg1;
 	}
 
+	//Gets background 2	
 	public static Background getBg2() {
 		return bg2;
 	}
@@ -289,5 +305,20 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	public static MainCharacter getMainCharacter() {
 		return mainCharacter;
 	}
-
+	
+	public static int getWindowWidth(){
+		return 800;
+	}
+	
+	public static int getWindowHeight(){
+		return 480;
+	}
+	
+	public static GameState getState(){
+		return state;
+	}
+	
+	public static void setState(GameState gameState){
+		state = gameState;
+	}
 }
