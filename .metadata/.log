@@ -1,0 +1,203 @@
+
+!ENTRY org.eclipse.core.resources 4 1 2014-04-03 03:43:10.646
+!MESSAGE Core exception while retrieving the content description
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:269)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:108)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:60)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:91)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:21)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:287)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:456)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$2.run(LaunchingResourceManager.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2014-04-03 03:43:10.693
+!MESSAGE Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+
+!ENTRY org.eclipse.core.resources 4 1 2014-04-03 03:43:11.076
+!MESSAGE Core exception while retrieving the content description
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:269)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:108)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:60)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:91)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:21)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:287)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:456)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.pruneShortcuts(LaunchingResourceManager.java:391)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getLabel(LaunchingResourceManager.java:314)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:240)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$2.run(LaunchingResourceManager.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2014-04-03 03:43:11.077
+!MESSAGE Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+
+!ENTRY org.eclipse.core.resources 4 1 2014-04-03 03:43:11.152
+!MESSAGE Core exception while retrieving the content description
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:269)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:108)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:60)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:91)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:21)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:287)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.getApplicableConfigurationTypes(LaunchConfigurationManager.java:750)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.getApplicableLaunchConfigurations(LaunchConfigurationManager.java:787)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getParticipatingLaunchConfigurations(LaunchingResourceManager.java:510)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getLabel(LaunchingResourceManager.java:322)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:240)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$2.run(LaunchingResourceManager.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2014-04-03 03:43:11.152
+!MESSAGE Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+
+!ENTRY org.eclipse.core.resources 4 1 2014-04-03 03:43:11.608
+!MESSAGE Core exception while retrieving the content description
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:269)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:108)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:60)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:91)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:21)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:287)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:456)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:236)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$2.run(LaunchingResourceManager.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2014-04-03 03:43:11.608
+!MESSAGE Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+
+!ENTRY org.eclipse.core.resources 4 1 2014-04-03 03:43:11.611
+!MESSAGE Core exception while retrieving the content description
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:269)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:108)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:60)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:91)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:21)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:287)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getShortcutsForSelection(LaunchingResourceManager.java:456)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.pruneShortcuts(LaunchingResourceManager.java:391)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getLabel(LaunchingResourceManager.java:314)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:240)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$2.run(LaunchingResourceManager.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2014-04-03 03:43:11.611
+!MESSAGE Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+
+!ENTRY org.eclipse.core.resources 4 1 2014-04-03 03:43:11.613
+!MESSAGE Core exception while retrieving the content description
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:269)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.testContentType(FilePropertyTester.java:108)
+	at org.eclipse.core.internal.propertytester.FilePropertyTester.test(FilePropertyTester.java:60)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:99)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AndExpression.evaluate(AndExpression.java:29)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:91)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:68)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:21)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:150)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:72)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:53)
+	at org.eclipse.core.internal.expressions.EnablementExpression.evaluate(EnablementExpression.java:53)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchShortcutExtension.evalEnablementExpression(LaunchShortcutExtension.java:287)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.getApplicableConfigurationTypes(LaunchConfigurationManager.java:750)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.getApplicableLaunchConfigurations(LaunchConfigurationManager.java:787)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getParticipatingLaunchConfigurations(LaunchingResourceManager.java:510)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.getLabel(LaunchingResourceManager.java:322)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager.computeLabels(LaunchingResourceManager.java:240)
+	at org.eclipse.debug.internal.ui.contextlaunching.LaunchingResourceManager$2.run(LaunchingResourceManager.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 274 2014-04-03 03:43:11.613
+!MESSAGE Resource is out of sync with the file system: '/MorphGame/src/morphgame/Square.java'.
+
+!ENTRY org.eclipse.ui.ide 4 4 2014-04-03 03:43:58.097
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2014-04-03 03:43:58.112
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2014-04-03 03:43:58.112
+!MESSAGE Could not write workspace metadata '/home/greg/Desktop/Morph_project/.metadata/.plugins/org.eclipse.core.resources/.root/27.tree'.
+!STACK 0
+java.io.FileNotFoundException: /home/greg/Desktop/Morph_project/.metadata/.plugins/org.eclipse.core.resources/.root/27.tree (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:212)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:160)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.saveTree(SaveManager.java:1350)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1134)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
