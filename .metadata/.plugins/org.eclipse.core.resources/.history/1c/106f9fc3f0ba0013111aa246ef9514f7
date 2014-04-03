@@ -1,0 +1,7 @@
+package morphgame;
+import java.applet.*;
+
+public class Sound{
+	
+
+}	

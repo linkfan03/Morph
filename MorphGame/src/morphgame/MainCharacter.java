@@ -5,7 +5,6 @@ import java.awt.Rectangle;
 public class MainCharacter {
 
 	// Constants are Here
-	final int JUMPSPEED = -15;
 	final int MOVESPEED = 5;
 	final int GROUND = 382;
 
@@ -27,6 +26,7 @@ public class MainCharacter {
 	private static Background bg1 = StartingClass.getBg1();
 	private static Background bg2 = StartingClass.getBg2();
 
+	private int jumpSpeed = -15;
 	private int speedX = 0;
 	private int speedY = 0;
 
@@ -120,7 +120,7 @@ public class MainCharacter {
 
 	public void jump() {
 		if (jumped == false) {
-			speedY = JUMPSPEED;
+			speedY = jumpSpeed;
 			jumped = true;
 		}
 
@@ -180,6 +180,14 @@ public class MainCharacter {
 
 	public void setMovingLeft(boolean movingLeft) {
 		this.movingLeft = movingLeft;
+	}
+
+	public int getJumpSpeed() {
+		return jumpSpeed;
+	}
+
+	public void setJumpSpeed(int jUMPSPEED) {
+		jumpSpeed = jUMPSPEED;
 	}
 
 }

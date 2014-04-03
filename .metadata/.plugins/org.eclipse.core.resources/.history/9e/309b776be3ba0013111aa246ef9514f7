@@ -1,0 +1,9 @@
+package morphgame;
+
+public class Circle extends MainCharacter{
+	final int JUMPSPEED = 1;
+	public Circle(){
+		setSpeedY(17);
+	}
+	
+}

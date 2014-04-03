@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
+<<<<<<< .merge_file_9WqhPP
 		<item value="1194" key="dialogWidth"/>
 		<item value="669" key="dialogHeight"/>
+=======
+		<item value="1200" key="dialogWidth"/>
+		<item value="675" key="dialogHeight"/>
+>>>>>>> .merge_file_c6aL6Q
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
