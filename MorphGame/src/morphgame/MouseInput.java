@@ -1,13 +1,19 @@
 package morphgame;
 
+import java.net.URL;
+
 import java.awt.Rectangle;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import morphgame.StartingClass.GameState;
 
 public class MouseInput implements MouseListener {
+	
+	private URL base;
 
+	
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub

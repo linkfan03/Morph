@@ -1,0 +1,8 @@
+package morphgame;
+
+public class Square extends MainCharacter{
+	
+	 public Square(){
+		
+	}
+}

@@ -1,0 +1,7 @@
+package morphgame;
+
+public class Circle extends MainCharacter{
+	public Circle(){
+		
+	}
+}

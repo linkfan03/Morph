@@ -1,0 +1,13 @@
+package morphgame;
+
+import java.applet.*;
+import java.net.URL;
+
+public class Sound{
+	private AudioClip sound;
+	private URL songPath;
+	 
+	Sound(String file){
+		 
+	 }
+}	
