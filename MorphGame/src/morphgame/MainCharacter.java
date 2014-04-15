@@ -14,6 +14,7 @@ public class MainCharacter {
 	private boolean ducked = false;
 	private boolean movingLeft = false;
 	private boolean movingRight = false;
+	private boolean touchingSpikes = false;
 
 	public static Rectangle rect = new Rectangle(0, 0, 0, 0);
 	public static Rectangle rect2 = new Rectangle(0, 0, 0, 0);
@@ -144,6 +145,14 @@ public class MainCharacter {
 
 	public int getSpeedY() {
 		return speedY;
+	}
+	
+	public boolean getTouchingSpikes(){
+		return touchingSpikes;
+	}
+	
+	public void setTouchingSpikes(boolean touchingSpikes){
+		this.touchingSpikes = touchingSpikes;
 	}
 
 	public void setCenterX(int centerX) {
