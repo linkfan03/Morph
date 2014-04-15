@@ -41,7 +41,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	private URL base;
 	private static Background bg1, bg2;
 	public static Image tilegrassTop, tilegrassMorph, tilegrassLeft,
-			tilegrassRight, tiledirt;
+			tilegrassRight, tiledirt, tileSpike;
 
 	private ArrayList<Tile> tilearray = new ArrayList<Tile>();
 	private static Menu menu = new Menu();
@@ -72,6 +72,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		tilegrassMorph = getImage(base, "data/tilegrassbot.png");
 		tilegrassLeft = getImage(base, "data/tilegrassleft.png");
 		tilegrassRight = getImage(base, "data/tilegrassright.png");
+		tileSpike = getImage(base, "data/tileSpike.png");
 	}
 	
 	//images related to square morph 
@@ -202,6 +203,10 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 				repaint();
 				
 				if (mainCharacter.getCenterY() > 500) {
+					state = GameState.Dead;
+					deadSound.play();
+				}
+				else if (mainCharacter.getTouchingSpikes() == true){
 					state = GameState.Dead;
 					deadSound.play();
 				}
