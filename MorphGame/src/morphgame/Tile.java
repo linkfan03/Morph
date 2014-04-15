@@ -84,6 +84,7 @@ public class Tile {
 		this.tileImage = tileImage;
 	}
 	
+	//This method checks to see if the character is colliding with a spikes tile, which results in death
 	public void checkSpikesCollision(Rectangle rbot){
 		if(rbot.intersects(r) && type == 9){
 			maincharacter.setTouchingSpikes(true);
