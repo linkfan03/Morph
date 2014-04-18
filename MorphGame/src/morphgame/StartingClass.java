@@ -1,6 +1,7 @@
 package morphgame;
 
 import java.applet.Applet;
+
 import java.applet.AudioClip;
 
 import java.awt.Color;
@@ -30,7 +31,8 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	private static Circle circle;
 	
 	//sound 
-	private AudioClip jumpSound, deadSound;
+	private AudioClip deadSound,jumpSound;
+
 	
 	
 	public static int score = 0;
@@ -97,8 +99,8 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	
 	//load sounds
 	public void soundStart(){
-		jumpSound = getAudioClip(base,"data/jumping.wav");
 		deadSound = getAudioClip(base,"data/dead.wav");
+		jumpSound = getAudioClip(base,"data/jumping.wav");
 	}
 	
 	//This method initializes the backgrounds and the main character
@@ -307,8 +309,8 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 			break;
 
 		case KeyEvent.VK_SPACE:
-			jumpSound.play();
 			mainCharacter.jump();
+			jumpSound.play();
 			break;
 		//There is a bug when you change morphs where you fall through the level 
 		// I am working on it - Greg 

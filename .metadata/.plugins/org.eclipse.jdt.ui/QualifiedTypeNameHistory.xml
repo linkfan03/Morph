@@ -8,6 +8,7 @@
 <fullyQualifiedTypeName name="java.awt.Image"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="morphgame.StartingClass"/>
-<fullyQualifiedTypeName name="java.net.URL"/>
 <fullyQualifiedTypeName name="java.applet.Applet"/>
+<fullyQualifiedTypeName name="java.applet.AudioClip"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
 </qualifiedTypeNameHistroy>
