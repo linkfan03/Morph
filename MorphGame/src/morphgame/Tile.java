@@ -3,6 +3,8 @@ package morphgame;
 import java.awt.Image;
 import java.awt.Rectangle;
 
+//The tile class provides the structure and methods of instantiation for tile objects, which are spawned to give 
+//the character platforms to move on
 public class Tile {
 
 	private int tileX, tileY, speedX, type;
@@ -33,12 +35,17 @@ public class Tile {
 
 		} else if (type == 2) {
 			tileImage = StartingClass.tilegrassMorph;
+		} else if (type == 9) {
+			tileImage = StartingClass.tileSpike;
 		} else {
+
 			type = 0;
 		}
 
 	}
 
+	// The update method for tiles, it paints them and checks for collisions as
+	// the game is updated
 	public void update() {
 		speedX = bg.getSpeedX() * 5;
 		tileX += speedX;
@@ -48,6 +55,7 @@ public class Tile {
 			checkVerticalCollision(MainCharacter.rect, MainCharacter.rect2);
 			checkSideCollision(MainCharacter.rect3, MainCharacter.rect4,
 					MainCharacter.footleft, MainCharacter.footright);
+			checkSpikesCollision(MainCharacter.rect2);
 		}
 
 	}
@@ -75,9 +83,18 @@ public class Tile {
 	public void setTileImage(Image tileImage) {
 		this.tileImage = tileImage;
 	}
+	
+	//This method checks to see if the character is colliding with a spikes tile, which results in death
+	public void checkSpikesCollision(Rectangle rbot){
+		if(rbot.intersects(r) && type == 9){
+			maincharacter.setTouchingSpikes(true);
+		}
+	}
+	// This method checks to see if there is a vertical collision between the
+	// character and a tile
 	public void checkVerticalCollision(Rectangle rtop, Rectangle rbot) {
 		if (rtop.intersects(r)) {
-			
+
 		}
 
 		if (rbot.intersects(r) && type == 8) {
@@ -87,24 +104,31 @@ public class Tile {
 		}
 	}
 
-	public void checkSideCollision(Rectangle rleft, Rectangle rright, Rectangle leftfoot, Rectangle rightfoot) {
-		if (type != 5 && type != 2 && type != 0){
+	// This method checks to see if there is a sideways collision between the
+	// character and a tile,
+	// you see left and right "feet" even though the character has no tangible
+	// feet in order to allow
+	// the character to be standing on a ledge with just a bit of his body
+	// resting on a tile
+	public void checkSideCollision(Rectangle rleft, Rectangle rright,
+			Rectangle leftfoot, Rectangle rightfoot) {
+		if (type != 5 && type != 2 && type != 0) {
 			if (rleft.intersects(r)) {
 				maincharacter.setCenterX(tileX + 102);
-	
+
 				maincharacter.setSpeedX(0);
-	
-			}else if (leftfoot.intersects(r)) {
+
+			} else if (leftfoot.intersects(r)) {
 				maincharacter.setCenterX(tileX + 85);
 				maincharacter.setSpeedX(0);
 			}
-			
+
 			if (rright.intersects(r)) {
 				maincharacter.setCenterX(tileX - 62);
-	
+
 				maincharacter.setSpeedX(0);
 			}
-			
+
 			else if (rightfoot.intersects(r)) {
 				maincharacter.setCenterX(tileX - 45);
 				maincharacter.setSpeedX(0);
