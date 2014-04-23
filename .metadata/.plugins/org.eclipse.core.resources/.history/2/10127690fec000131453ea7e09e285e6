@@ -1,0 +1,10 @@
+package morphgame;
+
+
+import java.applet.Applet;
+import java.applet.AudioClip;
+
+public class Sound {
+	public static final AudioClip JUMP = Applet.newAudioClip(Sound.class.getResource("jumping.wav"));
+	public static final AudioClip DEAD = Applet.newAudioClip(Sound.class.getResource("gameover.wav"));
+}

@@ -1,0 +1,13 @@
+package morphgame;
+
+import java.awt.geom.Ellipse2D;
+
+//will have unique characteristics for when the main character is in circle form
+public class Circle extends MainCharacter{
+	
+	
+	public void collison(){
+		super.circ.setFrame(5,5,5,5,);
+		
+	}
+}

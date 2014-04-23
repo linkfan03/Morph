@@ -1,19 +1,28 @@
 package morphgame;
 
 import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
 
 public class MainCharacter {
 
-	// Constants are Here
-	final int MOVESPEED = 5;
-	final int GROUND = 382;
 
+	// Constants are Here
+
+	final int GROUND = 382;
+	
+	//for time delay to represent momentum
+	private long timeA;
+	private long timeB;
+	
+	private int moveSpeed = 5;
+	
 	private int centerX = 100;
 	private int centerY = GROUND;
 	private boolean jumped = false;
 	private boolean ducked = false;
 	private boolean movingLeft = false;
 	private boolean movingRight = false;
+	private boolean touchingSpikes = false;
 
 	public static Rectangle rect = new Rectangle(0, 0, 0, 0);
 	public static Rectangle rect2 = new Rectangle(0, 0, 0, 0);
@@ -22,6 +31,7 @@ public class MainCharacter {
 	public static Rectangle yellowRed = new Rectangle(0, 0, 0, 0);
 	public static Rectangle footleft = new Rectangle(0, 0, 0, 0);
 	public static Rectangle footright = new Rectangle(0, 0, 0, 0);
+	public static Ellipse2D.Double circ = new Ellipse2D.Double(0.0,0,0,0);
 
 	private static Background bg1 = StartingClass.getBg1();
 	private static Background bg2 = StartingClass.getBg2();
@@ -29,7 +39,9 @@ public class MainCharacter {
 	private int jumpSpeed = -15;
 	private int speedX = 0;
 	private int speedY = 0;
-
+	
+	private String morph;
+	
 	public void update() {
 		// Moves Character or Scrolls Background accordingly.
 
@@ -45,8 +57,8 @@ public class MainCharacter {
 			centerX += speedX;
 		}
 		if (speedX > 0 && centerX > 200) {
-			bg1.setSpeedX(-MOVESPEED / 5);
-			bg2.setSpeedX(-MOVESPEED / 5);
+			bg1.setSpeedX(-moveSpeed / 5);
+			bg2.setSpeedX(-moveSpeed / 5);
 		}
 
 		// Updates Y Position
@@ -64,6 +76,18 @@ public class MainCharacter {
 		if (centerX + speedX <= 60) {
 			centerX = 61;
 		}
+		if(getMorph().equals("square")){
+			square();
+		}if(getMorph().equals("circle")){
+			circle();
+		}
+	}
+	
+	private void circle(){
+		circleCollison();
+		setMoveSpeed(10);
+	}
+	private void circleCollison() {
 		rect.setRect(centerX - 34, centerY - 63, 68, 63);
 		rect2.setRect(rect.getX(), rect.getY() + 63, 68, 63);
 		rect3.setRect(rect.getX() - 26, rect.getY() + 32, 26, 20);
@@ -72,27 +96,46 @@ public class MainCharacter {
 		footleft.setRect(centerX - 50, centerY + 20, 50, 15);
 		footright.setRect(centerX, centerY + 20, 50, 15);
 	}
-
+	
+	private void square(){
+		squareCollison();
+		setMoveSpeed(5);
+	}
+	public void squareCollison(){
+		rect.setRect(centerX - 34, centerY - 63, 68, 63);
+		rect2.setRect(rect.getX(), rect.getY() + 63, 68, 63);
+		rect3.setRect(rect.getX() - 26, rect.getY() + 32, 26, 20);
+		rect4.setRect(rect.getX() + 68, rect.getY() + 32, 26, 20);
+		yellowRed.setRect(centerX - 110, centerY - 110, 180, 180);
+		footleft.setRect(centerX - 50, centerY + 20, 50, 15);
+		footright.setRect(centerX, centerY + 20, 50, 15);
+	}
+	public void setMorph(String a){
+		morph =a;
+	}
+	public String getMorph(){
+		return morph;
+	}
 	public boolean isDucked() {
 		return ducked;
 	}
-
+	
 	public void setDucked(boolean ducked) {
 		this.ducked = ducked;
 	}
 
 	public void moveRight() {
 		if (ducked == false) {
-			speedX = MOVESPEED;
+			speedX = moveSpeed;
 		}
 	}
 
 	public void moveLeft() {
 		if (ducked == false) {
-			speedX = -MOVESPEED;
+			speedX = -moveSpeed;
 		}
 	}
-
+	
 	public void stopRight() {
 		setMovingRight(false);
 		stop();
@@ -107,7 +150,6 @@ public class MainCharacter {
 		if (isMovingRight() == false && isMovingLeft() == false) {
 			speedX = 0;
 		}
-
 		if (isMovingRight() == false && isMovingLeft() == true) {
 			moveLeft();
 		}
@@ -115,7 +157,10 @@ public class MainCharacter {
 		if (isMovingRight() == true && isMovingLeft() == false) {
 			moveRight();
 		}
+	}
 
+	private int getMoveSpeed() {
+		return moveSpeed;
 	}
 
 	public void jump() {
@@ -144,6 +189,16 @@ public class MainCharacter {
 
 	public int getSpeedY() {
 		return speedY;
+	}
+	
+	public boolean getTouchingSpikes(){
+		return touchingSpikes;
+	}
+	public void setMoveSpeed(int a){
+		moveSpeed = a;
+	}
+	public void setTouchingSpikes(boolean touchingSpikes){
+		this.touchingSpikes = touchingSpikes;
 	}
 
 	public void setCenterX(int centerX) {
