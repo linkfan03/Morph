@@ -1769,6 +1769,7 @@ Binding(CTRL+D,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+<<<<<<< .merge_file_Zz1kNR
 <<<<<<< .merge_file_CApisk
 <<<<<<< .merge_file_xTPW85
 <<<<<<< .merge_file_BCqGf8
@@ -1923,6 +1924,9 @@ Binding(CTRL+D,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
 !SESSION 2014-04-10 17:03:13.439 -----------------------------------------------
+=======
+!SESSION 2014-04-23 15:26:10.528 -----------------------------------------------
+>>>>>>> .merge_file_Lr2jiR
 eclipse.buildId=v22.3.0-887826
 java.version=1.6.0_30
 java.vendor=Sun Microsystems Inc.
@@ -1930,6 +1934,7 @@ BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
 Framework arguments:  -product com.android.ide.eclipse.adt.package.product
 Command-line arguments:  -os linux -ws gtk -arch x86_64 -product com.android.ide.eclipse.adt.package.product
 
+<<<<<<< .merge_file_Zz1kNR
 !ENTRY org.eclipse.jface 2 0 2014-04-10 17:10:25.147
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2014-04-10 17:10:25.147
@@ -2275,6 +2280,8 @@ org.eclipse.swt.SWTException: Widget is disposed
 >>>>>>> .merge_file_PPY9a3
 =======
 >>>>>>> .merge_file_yvpNjm
+=======
+>>>>>>> .merge_file_Lr2jiR
 !ENTRY org.eclipse.jdt.core 4 4 2014-04-23 16:34:12.456
 !MESSAGE Background Indexer Crash Recovery
 !STACK 0
@@ -2290,6 +2297,7 @@ java.lang.OutOfMemoryError: Requested array size exceeds VM limit
 	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:569)
 	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:388)
 	at java.lang.Thread.run(Thread.java:701)
+<<<<<<< .merge_file_Zz1kNR
 <<<<<<< .merge_file_CApisk
 <<<<<<< .merge_file_xTPW85
 <<<<<<< .merge_file_BCqGf8
@@ -2303,3 +2311,5 @@ java.lang.OutOfMemoryError: Requested array size exceeds VM limit
 >>>>>>> .merge_file_PPY9a3
 =======
 >>>>>>> .merge_file_yvpNjm
+=======
+>>>>>>> .merge_file_Lr2jiR
