@@ -5,6 +5,8 @@ INDEX VERSION 1.126+/home/greg/Desktop/Morph_project/.metadata/.plugins/org.ecli
 262802227.index
 3422508414.index
 2683054613.index
+<<<<<<< .merge_file_ZnmRlt
+<<<<<<< .merge_file_EiUq4f
 <<<<<<< .merge_file_p4DBld
 <<<<<<< .merge_file_17EJCl
 <<<<<<< .merge_file_aBR2kM
@@ -15,6 +17,10 @@ INDEX VERSION 1.126+/home/greg/Desktop/Morph_project/.metadata/.plugins/org.ecli
 >>>>>>> .merge_file_SezgOl
 =======
 >>>>>>> .merge_file_xBln69
+=======
+>>>>>>> .merge_file_s3aCTf
+=======
+>>>>>>> .merge_file_rzu5Ys
 3937884183.index
 2456322530.index
 1159935248.index
