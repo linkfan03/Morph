@@ -27,8 +27,6 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 
 	//characters
 	private static MainCharacter mainCharacter;
-	private static Square square;
-	private static Circle circle;
 	
 	//sound 
 	private AudioClip deadSound,jumpSound;
@@ -52,12 +50,12 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	//It also initializes the images used for characters and backgrounds
 	@Override
 	public void init() {
-
+		
 		setSize(getWindowWidth(), getWindowHeight());
+		addMouseListener(new MouseInput());
 		setFocusable(true);
 		setBackground(Color.BLACK);
 		addKeyListener(this);
-		addMouseListener(new MouseInput());
 		Frame frame = (Frame) this.getParent().getParent();
 		frame.setTitle("Morph");
 		try {
@@ -66,7 +64,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 			// TODO: handle exception
 		}
 
-		squareImages();
+		
 		background = getImage(base, "data/backgroundMockUp1.png");
 
 		tiledirt = getImage(base, "data/tiledirt.png");
@@ -79,6 +77,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	
 	//images related to square morph 
 	public void squareImages(){
+		mainCharacter.setMorph("square");
 		character = getImage(base, "data/square.png");
 		characterDown = getImage(base, "data/down.png");
 		characterJumped = getImage(base, "data/squareJump.png");
@@ -90,8 +89,9 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	
 	//images related to circle morph 
 	public void circleImages(){
+		mainCharacter.setMorph("circle");
 		character = getImage(base, "data/circle.png");
-		characterDown = getImage(base, "data/circleDown.png");
+		characterDown = getImage(base, "data/down.png");
 		characterJumped = getImage(base, "data/circleJump.png");
 		characterForward = getImage(base, "data/circleForward.png");
 		characterBack = getImage(base, "data/circleBack.png");
@@ -111,12 +111,9 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		bg1 = new Background(0, 0);
 		bg2 = new Background(2160, 0);
 		
-		//initialize morphs
-		square = new Square();
-		circle = new Circle();
+		mainCharacter = new MainCharacter();
 		//1st morph is a square
-		mainCharacter = square;
-		
+		squareImages();
 		//load sounds
 		soundStart();
 		
@@ -280,14 +277,11 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	}
 	
 	public void changeMorph(){
-		if(mainCharacter instanceof Square){
-			mainCharacter = circle;
+		if(mainCharacter.getMorph().equals("square")){
 			circleImages();
-		}else if(mainCharacter instanceof Circle){
-			mainCharacter = square;
+		}else if(mainCharacter.getMorph().equals("circle")){
 			squareImages();
 		}
-		
 	}
 
 	//When the key is released we need to have the character return to the natural starting position	
@@ -317,13 +311,10 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 			mainCharacter.jump();
 			jumpSound.play();
 			break;
-		//There is a bug when you change morphs where you fall through the level 
-		// I am working on it - Greg 
-		/*	
+
 		case KeyEvent.VK_1:
 			changeMorph();
 			break;
-		*/
 		}
 
 	}
