@@ -1,0 +1,12 @@
+package morphgame;
+
+import java.awt.Rectangle;
+
+//will have unique characteristics for when the main character is in square form
+public class Square extends MainCharacter{
+
+	
+	public void collison(){
+		
+	}
+}

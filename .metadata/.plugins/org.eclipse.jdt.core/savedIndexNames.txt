@@ -5,7 +5,10 @@ INDEX VERSION 1.126+/home/greg/Desktop/Morph_project/.metadata/.plugins/org.ecli
 262802227.index
 3422508414.index
 2683054613.index
+<<<<<<< .merge_file_aBR2kM
 55181.index
+=======
+>>>>>>> .merge_file_wT2WyM
 3937884183.index
 2456322530.index
 1159935248.index

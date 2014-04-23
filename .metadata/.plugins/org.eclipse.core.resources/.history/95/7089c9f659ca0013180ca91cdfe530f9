@@ -1,0 +1,15 @@
+package morphgame;
+
+import java.awt.Rectangle;
+
+//will have unique characteristics for when the main character is in square form
+public class Square extends MainCharacter{
+	public static Rectangle rect = new Rectangle(0, 0, 0, 0);
+	public static Rectangle rect2 = new Rectangle(0, 0, 0, 0);
+	public static Rectangle rect3 = new Rectangle(0, 0, 0, 0);
+	public static Rectangle rect4 = new Rectangle(0, 0, 0, 0);
+	public static Rectangle yellowRed = new Rectangle(0, 0, 0, 0);
+	public static Rectangle footleft = new Rectangle(0, 0, 0, 0);
+	public static Rectangle footright = new Rectangle(0, 0, 0, 0);
+	
+}

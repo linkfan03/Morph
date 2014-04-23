@@ -1,0 +1,34 @@
+package morphgame;
+
+import java.applet.Applet;
+
+import java.applet.AudioClip;
+
+public class Sound extends Applet {
+	
+	 private AudioClip song; // Sound player
+	 
+	 public Sound(String filename){
+	 	try{
+			  song = getAudioClip(getCodeBase(),filename); // Get the Sound URL
+	 	}
+	 	catch(Exception e){
+	 		System.put.println("Fail");
+	 	}
+	 }
+	 public void playSound()
+	 {
+	 	song.loop(); // Play 
+	 }
+	 public void stopSound()
+	 {
+	 	song.stop(); // Stop
+	 }
+	 public void playSoundOnce(){
+	 	song.play(); // Play only once
+	 }
+
+
+}
+
+

@@ -1,0 +1,12 @@
+package morphgame;
+
+import java.awt.geom.Ellipse2D;
+//will have unique characteristics for when the main character is in circle form
+public class Circle extends MainCharacter{
+	public static Ellipse2D.Double circ = new Ellipse2D.Double();
+	
+	public void collison(){
+		circ.setFrame(5,5,5,5);
+		
+	}
+}
