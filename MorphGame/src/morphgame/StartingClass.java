@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class StartingClass extends Applet implements Runnable, KeyListener {
 	enum GameState {
-		Running, Dead, MainMenu
+		Running, Dead, MainMenu, InstructMenu
 	}
 
 	private static GameState state = GameState.MainMenu;
