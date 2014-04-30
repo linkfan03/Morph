@@ -2,7 +2,6 @@ package morphgame;
 
 import java.net.URL;
 
-
 import java.awt.Rectangle;
 
 import java.awt.event.MouseEvent;
@@ -39,17 +38,31 @@ public class MouseInput implements MouseListener {
 		int mouseX = e.getX();
 		int mouseY = e.getY();
 		GameState state = StartingClass.getState();
-		if(state == GameState.MainMenu){
+		
+		if(state == GameState.MainMenu || state == GameState.Dead ){
 			if(isButtonClicked(Menu.getPlayButton(), mouseX, mouseY)){
-				//Clicked the play button
+				//Clicked the play button or try again button
 				StartingClass.setState(GameState.Running);
 			}
-		}
-		if(state == GameState.MainMenu || state == GameState.Dead){
 			if(isButtonClicked(Menu.getQuitButton(), mouseX, mouseY)){
 				System.exit(1);
+				
+			}if(isButtonClicked(Menu.getScoreButton(), mouseX, mouseY)){
+				StartingClass.setState(GameState.Leaderboard);
 			}
 		}
+		if(state == GameState.Leaderboard){
+			if(isButtonClicked(Menu.getScoreButton(), mouseX, mouseY)){
+				StartingClass.setState(GameState.MainMenu);
+			}
+		}
+		if(state == GameState.Dead){
+			if(isButtonClicked(Menu.getSubmitButton(), mouseX, mouseY)){
+				StartingClass.submitScore();
+				StartingClass.setState(GameState.Leaderboard);
+			}
+		}
+		
 		
 	}
 

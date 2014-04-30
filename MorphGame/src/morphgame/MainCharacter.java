@@ -1,7 +1,7 @@
 package morphgame;
 
 import java.awt.Rectangle;
-import java.awt.geom.Ellipse2D;
+
 
 public class MainCharacter {
 
@@ -9,11 +9,7 @@ public class MainCharacter {
 	// Constants are Here
 
 	final int GROUND = 382;
-	
-	//for time delay to represent momentum
-	private long timeA;
-	private long timeB;
-	
+		
 	private int moveSpeed = 5;
 	
 	private int centerX = 100;
@@ -31,7 +27,6 @@ public class MainCharacter {
 	public static Rectangle yellowRed = new Rectangle(0, 0, 0, 0);
 	public static Rectangle footleft = new Rectangle(0, 0, 0, 0);
 	public static Rectangle footright = new Rectangle(0, 0, 0, 0);
-	public static Ellipse2D.Double circ = new Ellipse2D.Double(0.0,0,0,0);
 
 	private static Background bg1 = StartingClass.getBg1();
 	private static Background bg2 = StartingClass.getBg2();
@@ -39,8 +34,12 @@ public class MainCharacter {
 	private int jumpSpeed = -15;
 	private int speedX = 0;
 	private int speedY = 0;
-	
+	private int score = 0;
 	private String morph;
+
+	public void respawn() {
+		
+	}
 	
 	public void update() {
 		// Moves Character or Scrolls Background accordingly.
@@ -57,6 +56,7 @@ public class MainCharacter {
 			centerX += speedX;
 		}
 		if (speedX > 0 && centerX > 200) {
+			score+=speedX;
 			bg1.setSpeedX(-moveSpeed / 5);
 			bg2.setSpeedX(-moveSpeed / 5);
 		}
@@ -76,25 +76,25 @@ public class MainCharacter {
 		if (centerX + speedX <= 60) {
 			centerX = 61;
 		}
+		//use characteristics of the new morph
 		if(getMorph().equals("square")){
 			square();
 		}if(getMorph().equals("circle")){
 			circle();
+		}if(getMorph().equals("balloon")){
+			balloon();
 		}
 	}
 	
 	private void circle(){
-		circleCollison();
+		//will change character collision boxes later
+		squareCollison();
 		setMoveSpeed(10);
 	}
+	
+	//will change character collision boxes later
 	private void circleCollison() {
-		rect.setRect(centerX - 34, centerY - 63, 68, 63);
-		rect2.setRect(rect.getX(), rect.getY() + 63, 68, 63);
-		rect3.setRect(rect.getX() - 26, rect.getY() + 32, 26, 20);
-		rect4.setRect(rect.getX() + 68, rect.getY() + 32, 26, 20);
-		yellowRed.setRect(centerX - 110, centerY - 110, 180, 180);
-		footleft.setRect(centerX - 50, centerY + 20, 50, 15);
-		footright.setRect(centerX, centerY + 20, 50, 15);
+		
 	}
 	
 	private void square(){
@@ -109,6 +109,13 @@ public class MainCharacter {
 		yellowRed.setRect(centerX - 110, centerY - 110, 180, 180);
 		footleft.setRect(centerX - 50, centerY + 20, 50, 15);
 		footright.setRect(centerX, centerY + 20, 50, 15);
+	}
+	private void balloon(){
+		speedY=-1;
+		setMoveSpeed(5);
+		//place holder
+		squareCollison();
+		
 	}
 	public void setMorph(String a){
 		morph =a;
@@ -244,5 +251,10 @@ public class MainCharacter {
 	public void setJumpSpeed(int jUMPSPEED) {
 		jumpSpeed = jUMPSPEED;
 	}
+	public int getScore(){
+		return score/100;
+	}
+
+
 
 }

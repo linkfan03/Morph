@@ -5,10 +5,11 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.awt.event.KeyListener"/>
-<fullyQualifiedTypeName name="java.awt.Image"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="morphgame.StartingClass"/>
 <fullyQualifiedTypeName name="java.applet.Applet"/>
-<fullyQualifiedTypeName name="java.applet.AudioClip"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="java.awt.Image"/>
+<fullyQualifiedTypeName name="java.applet.AudioClip"/>
+<fullyQualifiedTypeName name="java.awt.TextField"/>
 </qualifiedTypeNameHistroy>

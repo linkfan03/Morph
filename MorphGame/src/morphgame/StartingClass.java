@@ -2,6 +2,7 @@ package morphgame;
 
 import java.applet.Applet;
 
+
 import java.applet.AudioClip;
 
 import java.awt.Color;
@@ -20,20 +21,19 @@ import java.util.ArrayList;
 
 public class StartingClass extends Applet implements Runnable, KeyListener {
 	enum GameState {
-		Running, Dead, MainMenu
+		Running, Dead, MainMenu, Leaderboard
 	}
 
+	
 	private static GameState state = GameState.MainMenu;
 
 	//characters
 	private static MainCharacter mainCharacter;
+	private static LeaderBoard leaderBoard;
 	
 	//sound 
-	private AudioClip deadSound,jumpSound;
+	private AudioClip jumpSound,menuSound;
 
-	
-	
-	public static int score = 0;
 	private Font font = new Font(null, Font.BOLD, 30);
 	private Image image, character, characterDown, characterJumped,
 			characterForward, characterBack, currentSprite, background;
@@ -41,10 +41,12 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	private URL base;
 	private static Background bg1, bg2;
 	public static Image tilegrassTop, tilegrassMorph, tilegrassLeft,
-			tilegrassRight, tiledirt, tileSpike;
+			tilegrassRight, tiledirt, tileSpike,deadScreen;
 
+
+	private static Menu menu;
 	private ArrayList<Tile> tilearray = new ArrayList<Tile>();
-	private static Menu menu = new Menu();
+
 	
 	//This initializes the window that the game will be played in
 	//It also initializes the images used for characters and backgrounds
@@ -63,7 +65,11 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-
+	
+		leaderBoard = new LeaderBoard();
+		menu = new Menu(leaderBoard);
+		
+		soundStart();
 		
 		background = getImage(base, "data/backgroundMockUp1.png");
 
@@ -97,10 +103,19 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		characterBack = getImage(base, "data/circleBack.png");
 		currentSprite = character;
 	}
+	//images related to balloon morph
+	public void balloonImages(){
+		mainCharacter.setMorph("balloon");
+		character = getImage(base,"data/balloon.png");
+		characterDown = getImage(base,"data/balloon.png");
+		characterJumped = getImage(base,"data/balloon.png");
+		characterForward = getImage(base, "data/balloonForward.png");
+		characterBack = getImage(base, "data/balloonBack.png");
+		currentSprite = character;
+	}
 	
 	//load sounds
 	public void soundStart(){
-		deadSound = getAudioClip(base,"data/dead.wav");
 		jumpSound = getAudioClip(base,"data/jumping.wav");
 	}
 	
@@ -108,14 +123,14 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	//Then it starts the game loop
 	@Override
 	public void start() {
+		
 		bg1 = new Background(0, 0);
 		bg2 = new Background(2160, 0);
-		
+	
 		mainCharacter = new MainCharacter();
 		//1st morph is a square
 		squareImages();
 		//load sounds
-		soundStart();
 		
 		// Initialize Tiles
 		try {
@@ -202,13 +217,21 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 				repaint();
 				
 				if (mainCharacter.getCenterY() > 500) {
-					state = GameState.Dead;
-					deadSound.play();
+					//revert to start
+					
+					state = GameState.Dead;						
+					leaderBoard.newScore(mainCharacter.getScore());
 				}
 				else if (mainCharacter.getTouchingSpikes() == true){
+					//revert to start
+					
 					state = GameState.Dead;
-					deadSound.play();
+					leaderBoard.newScore(mainCharacter.getScore());
 				}
+			}else {
+				
+				//to show leaderboard
+				repaint();
 			}
 			try {
 				Thread.sleep(17);
@@ -253,7 +276,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 
 			g.setFont(font);
 			g.setColor(Color.WHITE);
-			g.drawString(Integer.toString(score), 740, 30);
+			g.drawString(Integer.toString(mainCharacter.getScore()), 740, 30);
 
 		} else {
 			menu.update(g, state);
@@ -280,6 +303,8 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		if(mainCharacter.getMorph().equals("square")){
 			circleImages();
 		}else if(mainCharacter.getMorph().equals("circle")){
+			balloonImages();
+		}else if(mainCharacter.getMorph().equals("balloon")){
 			squareImages();
 		}
 	}
@@ -301,6 +326,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 			mainCharacter.moveLeft();
 			mainCharacter.setMovingLeft(true);
 			break;
+			
 
 		case KeyEvent.VK_RIGHT:
 			mainCharacter.moveRight();
@@ -380,5 +406,10 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	
 	public static void setState(GameState gameState){
 		state = gameState;
+	}
+
+	public static void submitScore() {
+		menu.submitScore();
+		
 	}
 }
