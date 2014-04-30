@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class StartingClass extends Applet implements Runnable, KeyListener {
 	enum GameState {
-		Running, Dead, MainMenu, Leaderboard
+		Running, Dead, MainMenu, Leaderboard, InstructMenu
 	}
 
 	

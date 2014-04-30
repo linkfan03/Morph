@@ -44,7 +44,9 @@ public class MouseInput implements MouseListener {
 				//Clicked the play button or try again button
 				StartingClass.setState(GameState.Running);
 			}
-			if(isButtonClicked(Menu.getQuitButton(), mouseX, mouseY)){
+		}
+		if (state == GameState.MainMenu || state == GameState.Dead || state == GameState.InstructMenu) {
+			if (isButtonClicked(Menu.getQuitButton(), mouseX, mouseY)) {
 				System.exit(1);
 				
 			}if(isButtonClicked(Menu.getScoreButton(), mouseX, mouseY)){
@@ -64,6 +66,20 @@ public class MouseInput implements MouseListener {
 		}
 		
 		
+		if(state == GameState.MainMenu){
+			if(isButtonClicked(Menu.getInstructButton(), mouseX, mouseY)){
+				//clicked the instructions button
+				StartingClass.setState(GameState.InstructMenu);
+				
+			}
+		}
+		if(state == GameState.InstructMenu){
+			if(isButtonClicked(Menu.getBackButton(), mouseX, mouseY)){
+				//clicked the back button
+				StartingClass.setState(GameState.MainMenu);
+			}
+		}
+
 	}
 
 	@Override
