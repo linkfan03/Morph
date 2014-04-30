@@ -10,6 +10,8 @@ import java.awt.Rectangle;
 import morphgame.StartingClass.GameState;
 
 public class Menu {
+	
+	//these are the buttons that can appear on menu screens
 	//TODO Add code for try again
 	//private static Rectangle tryAgainButton = new Rectangle(StartingClass.getWindowWidth()/2 - 65, 205, 155, 50);
 	private static Rectangle submitButton = new Rectangle(StartingClass.getWindowWidth()/2 - 130, 128, 350, 50);
@@ -30,6 +32,7 @@ public class Menu {
 		
 	}
 	
+	//the update method for the Menu class constantly checks for changes to the gamestate to change menus
 	public void update(Graphics g, GameState state){
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, StartingClass.getWindowWidth(), StartingClass.getWindowHeight());
@@ -71,6 +74,7 @@ public class Menu {
 			drawString(g,leaderboard.getScores(10),StartingClass.getWindowWidth()/2 - 125,0);
 			g.drawString("Back", backButton.x + 60, backButton.y + 35);
 			g2d.draw(backButton);
+			
 		}else if (state == GameState.InstructMenu){
 			g.drawString("How to Play:", StartingClass.getWindowWidth() / 2 - 400, 60);
 			g.drawString("Use the Right and Left Arrow Keys To Move", StartingClass.getWindowWidth() / 2 - 400, 100);
