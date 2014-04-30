@@ -45,7 +45,7 @@ public class MouseInput implements MouseListener {
 				StartingClass.setState(GameState.Running);
 			}
 		}
-		if (state == GameState.MainMenu || state == GameState.Dead || state == GameState.InstructMenu) {
+		if (state == GameState.MainMenu || state == GameState.Dead) {
 			if (isButtonClicked(Menu.getQuitButton(), mouseX, mouseY)) {
 				System.exit(1);
 				

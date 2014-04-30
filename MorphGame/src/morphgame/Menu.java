@@ -12,12 +12,13 @@ import morphgame.StartingClass.GameState;
 public class Menu {
 	//TODO Add code for try again
 	//private static Rectangle tryAgainButton = new Rectangle(StartingClass.getWindowWidth()/2 - 65, 205, 155, 50);
-<<<<<<< HEAD
 	private static Rectangle submitButton = new Rectangle(StartingClass.getWindowWidth()/2 - 130, 128, 350, 50);
-	private static Rectangle playButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 205, 200, 50);
-	private static Rectangle quitButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 285, 200, 50);
-	private static Rectangle scoreButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 365, 200, 50);
-	private static Rectangle instructButton = new Rectangle(StartingClass.getWindowWidth() / 2 - 25, 365, 190, 50);  
+	private static Rectangle playButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 180, 200, 50);
+	private static Rectangle quitButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 230, 200, 50);
+	private static Rectangle scoreButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 280, 200, 50);
+	
+	private static Rectangle backButton = new Rectangle(StartingClass.getWindowWidth() / 2 - 85, 200, 80, 50);
+	private static Rectangle instructButton = new Rectangle(StartingClass.getWindowWidth() / 2 - 85, 330, 200, 50);  
   
 	private String name;
 	private String score;
@@ -50,7 +51,7 @@ public class Menu {
 			g2d.draw(playButton);
 		
 		}
-<<<<<<< HEAD
+
 		else if(state == GameState.MainMenu){
 			g.drawString("Morph", StartingClass.getWindowWidth()/2 - 30, 160);
 			g.drawString("Play", playButton.x + 60, playButton.y + 35);
@@ -122,6 +123,7 @@ public class Menu {
 
 	public static Rectangle getSubmitButton() {
 		return submitButton;
+	}
 	
 	public static Rectangle getBackButton(){
 		return backButton;
