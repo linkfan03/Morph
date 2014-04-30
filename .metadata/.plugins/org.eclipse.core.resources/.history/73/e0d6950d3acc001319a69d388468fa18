@@ -1,0 +1,85 @@
+package morphgame;
+
+import java.sql.*;
+
+//For this I am using SQLite to store our leaderboard data
+//this is just a temporary solution so we can work on other features
+//We will be storing our data using google play game services on the app version
+
+public class LeaderBoard {
+	
+	private int score;
+	private String sql;
+	private String name;
+	private int id;
+	private int oldScore;
+	private Connection c;
+	private Statement stmt;
+	
+	public LeaderBoard(){
+		c = null;
+		stmt = null;
+	    try {
+	      Class.forName("org.sqlite.JDBC");
+	      c = DriverManager.getConnection("jdbc:sqlite:leaderboard.db");
+	      stmt = c.createStatement();
+	      sql = "CREATE TABLE LEADERBOARD " +
+	    	  		"(ID INT PRIMARY KEY 	NOT NULL," +
+	    		  		"NAME			TEXT	NOT NULL," +
+	    		  		"SCORE 			INT		NOT NULL)";
+	      
+	      stmt.executeUpdate(sql);
+	      stmt.close();
+	      c.close();
+	    } catch ( Exception e ) {
+	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	      System.exit(0);
+	    }
+	    System.out.println("Opened database successfully");
+	}
+	
+	public void newScore(int a){
+		score = a/20; 
+		insertScore(id, score);	
+		getScores();
+	}
+	
+	public void insertScore(int id,int score){
+		try {
+			c = DriverManager.getConnection("jdbc:sqlite:leaderboard.db");
+	
+  		stmt = c.createStatement();
+
+  		sql = "INSERT INTO LEADERBOARD (ID,NAME,SCORE) " +
+  			  "VALUES (id , 'placeholeder', score )" ;
+
+  		stmt.executeUpdate(sql);
+
+  		stmt.close();
+    	c.commit();
+      	c.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void getScores(){
+    	try {
+			c = DriverManager.getConnection("jdbc:sqlite:leaderboard.db");
+		
+  		stmt = c.createStatement();
+	  	ResultSet rs = stmt.executeQuery( "SELECT * FROM LEADERBOARD;" );
+	
+	  	while(rs.next()){
+	  		id = rs.getInt("id");
+	  		name = rs.getString("name");
+	  		oldScore = rs.getInt("score");
+	  	}
+	  	rs.close();
+	  	stmt.close();
+	  	c.close();
+	}
+
+	
+}
