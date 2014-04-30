@@ -1,6 +1,7 @@
 package morphgame;
 
 import java.applet.AudioClip;
+
 import java.awt.Color;
 
 import java.awt.Graphics;
@@ -8,6 +9,8 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 import morphgame.StartingClass.GameState;
+
+import java.awt.TextField;
 
 public class Menu {
 	//TODO Add code for try again

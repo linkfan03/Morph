@@ -818,6 +818,7 @@ org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
 
+<<<<<<< .merge_file_MjJvE6
 !ENTRY org.eclipse.e4.ui.workbench 4 0 2014-04-30 00:13:44.096
 !MESSAGE Error setting focus to : org.eclipse.e4.ui.model.application.ui.basic.impl.PartImpl Tile.java
 !STACK 0
@@ -978,3 +979,71 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+=======
+!ENTRY org.eclipse.jdt.core 4 4 2014-04-30 01:44:58.108
+!MESSAGE JavaBuilder handling ImageBuilderInternalException while building: MorphGame
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource already exists on disk: '/MorphGame/bin/data/balloon.png'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.copy(FileSystemResourceManager.java:306)
+	at org.eclipse.core.internal.resources.Resource.copy(Resource.java:566)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.copyResource(AbstractImageBuilder.java:380)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.findSourceFiles(IncrementalImageBuilder.java:667)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.findSourceFiles(IncrementalImageBuilder.java:545)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.findSourceFiles(IncrementalImageBuilder.java:496)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.build(IncrementalImageBuilder.java:96)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:265)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:193)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2014-04-30 01:44:58.108
+!MESSAGE Resource already exists on disk: '/MorphGame/bin/data/balloon.png'.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2014-04-30 01:46:57.647
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Timed out while retrieving the attached javadoc for Rectangle {key=Ljava/awt/Rectangle;} [in Rectangle.class [in java.awt [in /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rt.jar]]] ]
+	at org.eclipse.jdt.internal.core.JavaElement.getURLContents(JavaElement.java:808)
+	at org.eclipse.jdt.internal.core.BinaryType.getJavadocContents(BinaryType.java:1037)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:995)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:463)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:619)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:565)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:557)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1012 2014-04-30 01:46:57.648
+!MESSAGE Timed out while retrieving the attached javadoc for Rectangle {key=Ljava/awt/Rectangle;} [in Rectangle.class [in java.awt [in /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/rt.jar]]] 
+
+!ENTRY org.eclipse.jface 2 0 2014-04-30 01:54:15.860
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-04-30 01:54:15.860
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.MakeHandlersGo@5aaf78e9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.MakeHandlersGo@362b3782,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+>>>>>>> .merge_file_STjjG1
