@@ -21,11 +21,11 @@ import java.util.ArrayList;
 
 public class StartingClass extends Applet implements Runnable, KeyListener {
 	enum GameState {
-		Running, Dead, MainMenu, Leaderboard, InstructMenu
-	}
+		Running, Dead, MainMenu, Leaderboard, InstructMenu    //these are the available gamestates that the game 
+	}                                                             //can possibly be in at any given time
 
 	
-	private static GameState state = GameState.MainMenu;
+	private static GameState state = GameState.MainMenu;         //initializes gamestate at the main menu
 
 	//characters
 	private static MainCharacter mainCharacter;
