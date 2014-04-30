@@ -38,7 +38,17 @@ public class MainCharacter {
 	private String morph;
 
 	public void respawn() {
-		
+		centerX = 100;
+		centerY = GROUND;
+		jumped = false;
+		ducked = false;
+		movingLeft = false;
+		movingRight = false;
+		touchingSpikes = false;
+		jumpSpeed = -15;
+		speedX = 0;
+		speedY = 0;
+		score = 0;
 	}
 	
 	public void update() {

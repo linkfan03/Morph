@@ -17,7 +17,7 @@ public class Menu {
 	private static Rectangle quitButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 230, 200, 50);
 	private static Rectangle scoreButton = new Rectangle(StartingClass.getWindowWidth()/2 - 85, 280, 200, 50);
 	
-	private static Rectangle backButton = new Rectangle(StartingClass.getWindowWidth() / 2 - 85, 200, 80, 50);
+	private static Rectangle backButton = new Rectangle(StartingClass.getWindowWidth() / 2 - 85, 400, 200, 50);
 	private static Rectangle instructButton = new Rectangle(StartingClass.getWindowWidth() / 2 - 85, 330, 200, 50);  
   
 	private String name;
@@ -69,16 +69,13 @@ public class Menu {
 		}else if(state == GameState.Leaderboard){
 			//displays top ten in leaderboard
 			drawString(g,leaderboard.getScores(10),StartingClass.getWindowWidth()/2 - 125,0);
-			
-			
-			//return to menu
-			g.drawString("Return", scoreButton.x + 60, scoreButton.y + 35);
-			g2d.draw(scoreButton);
+			g.drawString("Back", backButton.x + 60, backButton.y + 35);
+			g2d.draw(backButton);
 		}else if (state == GameState.InstructMenu){
 			g.drawString("How to Play:", StartingClass.getWindowWidth() / 2 - 400, 60);
 			g.drawString("Use the Right and Left Arrow Keys To Move", StartingClass.getWindowWidth() / 2 - 400, 100);
 			g.drawString("Press the space bar to jump", StartingClass.getWindowWidth() / 2 - 400, 140);
-			g.drawString("Back", backButton.x + 10, backButton.y + 35);
+			g.drawString("Back", backButton.x + 60, backButton.y + 35);
 			g2d.draw(backButton);
 		}
 		

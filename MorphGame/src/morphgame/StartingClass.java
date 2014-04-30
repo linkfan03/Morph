@@ -45,7 +45,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 
 
 	private static Menu menu;
-	private ArrayList<Tile> tilearray = new ArrayList<Tile>();
+	private static ArrayList<Tile> tilearray = new ArrayList<Tile>();
 
 	
 	//This initializes the window that the game will be played in
@@ -121,7 +121,6 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	
 	//This method initializes the backgrounds and the main character
 	//Then it starts the game loop
-	@Override
 	public void start() {
 		
 		bg1 = new Background(0, 0);
@@ -131,20 +130,14 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 		//1st morph is a square
 		squareImages();
 		//load sounds
-		
-		// Initialize Tiles
-		try {
-			loadMap("data/map1.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		Thread thread = new Thread(this);
 		thread.start();
 	}
 
-	private void loadMap(String filename) throws IOException {
+	private static void loadMap(String filename) throws IOException {
+		//clear last map
+		tilearray.clear();
 		ArrayList lines = new ArrayList();
 		int width = 0;
 		int height = 0;
@@ -308,6 +301,23 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 			squareImages();
 		}
 	}
+	//when character dies we need to reload a map
+	// and reset the values that cause it to die
+	//note we can also use this to select maps;
+	public static void respawn(){
+		
+		// Initialize Tiles
+			try {
+				loadMap("data/map1.txt");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		//reset main character defaults 
+		mainCharacter.respawn();
+				
+			
+	}
 
 	//When the key is released we need to have the character return to the natural starting position	
 	public void keyPressed(KeyEvent e) {
@@ -406,6 +416,7 @@ public class StartingClass extends Applet implements Runnable, KeyListener {
 	
 	public static void setState(GameState gameState){
 		state = gameState;
+		
 	}
 
 	public static void submitScore() {
